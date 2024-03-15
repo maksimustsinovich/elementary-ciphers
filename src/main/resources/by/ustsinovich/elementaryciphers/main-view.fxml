@@ -18,13 +18,13 @@
         <Button layoutX="514.0" layoutY="131.0" mnemonicParsing="false" onAction="#process" text="Process" />
         <Label layoutX="14.0" layoutY="39.0" text="Text:" />
         <Label layoutX="14.0" layoutY="78.0" text="Key:" />
-        <TextField fx:id="text" layoutX="66.0" layoutY="35.0" prefHeight="25.0" prefWidth="500.0" />
+        <TextArea fx:id="text" layoutX="66.0" layoutY="35.0" prefHeight="25.0" prefWidth="500.0" />
         <TextField fx:id="key" layoutX="66.0" layoutY="74.0" prefHeight="25.0" prefWidth="500.0" />
         <RadioButton fx:id="playfair" layoutX="14.0" layoutY="109.0" mnemonicParsing="false" selected="true" text="Playfair" />
         <RadioButton fx:id="vigenere" layoutX="116.0" layoutY="109.0" mnemonicParsing="false" text="Vigenere" />
         <RadioButton fx:id="encrypt" layoutX="14.0" layoutY="135.0" mnemonicParsing="false" selected="true" text="Encrypt" />
         <RadioButton fx:id="decrypt" layoutX="116.0" layoutY="135.0" mnemonicParsing="false" text="Decrypt" />
         <Label layoutX="12.0" layoutY="169.0" text="Result:" />
-        <TextField fx:id="result" editable="false" layoutX="66.0" layoutY="165.0" prefHeight="25.0" prefWidth="500.0" />
+        <TextArea fx:id="result" editable="false" layoutX="66.0" layoutY="165.0" prefHeight="25.0" prefWidth="500.0" />
     </children>
 </Pane>

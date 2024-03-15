@@ -11,7 +11,7 @@ public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("main-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 200);
+        Scene scene = new Scene(fxmlLoader.load(), 600, 250);
         stage.setTitle("Information Theory NO. 1");
         stage.setScene(scene);
         stage.setResizable(false);

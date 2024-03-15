@@ -27,12 +27,12 @@ public class PlayfairEncryptor {
 
         int keyIndex = 0;
         for (int k = 0; k < 4; k++) {
-            if (isOdd(k)) {
+//            if (isOdd(k)) {
                 keyMatrix[k] = fillMatrixByKeyword(keys[keyIndex]);
                 keyIndex++;
-            } else {
-                keyMatrix[k] = fillMatrixByAlphabet();
-            }
+//            } else {
+//                keyMatrix[k] = fillMatrixByAlphabet();
+//            }
         }
 
         return keyMatrix;
@@ -130,11 +130,20 @@ public class PlayfairEncryptor {
             char m1 = plainTextCopy.charAt(i);
             char m2 = plainTextCopy.charAt(i + 1);
 
-            int[] m1Index = findPosition(keyMatrix[0], m1);
-            int[] m2Index = findPosition(keyMatrix[2], m2);
+            int[] m1Index = findPosition(keyMatrix[0], m1); // x1 y1
+            int[] m2Index = findPosition(keyMatrix[3], m2); // x2 y2
 
-            cipherTextBuilder.append(keyMatrix[1][m1Index[0]][m2Index[1]]);
-            cipherTextBuilder.append(keyMatrix[3][m2Index[0]][m1Index[1]]);
+            int i1 = m1Index[0]; // y1
+            int i2 = m2Index[0]; // y2
+
+            int j1 = m1Index[1]; // x1
+            int j2 = m2Index[1]; // x2
+
+            System.out.println(Arrays.toString(m1Index));
+            System.out.println(Arrays.toString(m2Index));
+
+            cipherTextBuilder.append(keyMatrix[1][i1][j2]);
+            cipherTextBuilder.append(keyMatrix[2][i2][j1]);
         }
 
         return cipherTextBuilder.toString();
@@ -173,10 +182,10 @@ public class PlayfairEncryptor {
             char c2 = cipherTextCopy.charAt(i + 1);
 
             int[] c1Index = findPosition(keyMatrix[1], c1);
-            int[] c2Index = findPosition(keyMatrix[3], c2);
+            int[] c2Index = findPosition(keyMatrix[2], c2);
 
             plainTextBuilder.append(keyMatrix[0][c1Index[0]][c2Index[1]]);
-            plainTextBuilder.append(keyMatrix[2][c2Index[0]][c1Index[1]]);
+            plainTextBuilder.append(keyMatrix[3][c2Index[0]][c1Index[1]]);
         }
 
         return plainTextBuilder.toString();

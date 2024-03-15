@@ -26,9 +26,9 @@ public class MainController {
     public Pane root;
 
     private static final FileChooser fileChooser = new FileChooser();
-    public TextField text;
+    public TextArea text;
     public TextField key;
-    public TextField result;
+    public TextArea result;
 
 //    private UnaryOperator<TextFormatter.Change> getPlayfairFilter() {
 //        return change -> {
@@ -117,7 +117,7 @@ public class MainController {
         }
 
         if (playfair.isSelected()) {
-            if (!keyText.matches("[a-zA-Z]+(\\s[a-zA-Z]+)*,\\s[a-zA-Z]+(\\s[a-zA-Z]+)*")) {
+            if (!keyText.matches("[a-zA-Z]+(\\s[a-zA-Z]+)*,\\s[a-zA-Z]+(\\s[a-zA-Z]+)*,\\s[a-zA-Z]+(\\s[a-zA-Z]+)*,\\s[a-zA-Z]+(\\s[a-zA-Z]+)*")) {
                 showError("Invalid key for Playfair cipher. It should be two English phrases separated by a comma.");
                 return;
             }
